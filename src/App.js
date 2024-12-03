@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home1';
+import Login from './components/Login';
+import Register from './components/Register';
+import ProductList from './components/ProductList';
+import ProductForm from './components/ProductForm';
+import CategoryList from './components/CategoryList';
+import CategoryForm from './components/CategoryForm';
+import OrderList from './components/OrderList';
+import OrderForm from './components/OrderForm';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Welcome to the E-commerce App</h1>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/product-form" element={<ProductForm />} />
+            <Route path="/categories" element={<CategoryList />} />
+            <Route path="/category-form" element={<CategoryForm />} />
+            <Route path="/orders" element={<OrderList />} />
+            <Route path="/order-form" element={<OrderForm />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
