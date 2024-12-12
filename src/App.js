@@ -9,6 +9,7 @@ import CategoryList from './components/CategoryList';
 import CategoryForm from './components/CategoryForm';
 import OrderList from './components/OrderList';
 import OrderForm from './components/OrderForm';
+import Homepage from  './components/Homepage';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/category-form" element={<CategoryForm />} />
             <Route path="/orders" element={<OrderList />} />
             <Route path="/order-form" element={<OrderForm />} />
+            <Route path='/homepage' element={<Homepage/>}/>
           </Routes>
         </main>
       </div>
